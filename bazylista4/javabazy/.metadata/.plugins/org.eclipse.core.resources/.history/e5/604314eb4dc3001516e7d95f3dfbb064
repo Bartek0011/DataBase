@@ -1,0 +1,47 @@
+import java.sql.*;
+
+
+
+class DB {
+	static Window www = new Window();
+	
+	public DB() {
+	}
+
+	public void dbConnect(String db_connect_string, String db_userid, String db_password, int x, String y) {
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			Connection conn = DriverManager.getConnection(db_connect_string, db_userid, db_password);
+			
+			Statement statement = conn.createStatement();
+			String queryString = "select * from Firma";
+			if(x==1){
+				queryString = "select * from Firma";
+			}
+			if(x==2){
+				queryString = "select * from Pracowanik where";
+				
+			}
+			
+			
+			
+			
+			ResultSet rs = statement.executeQuery(queryString);
+			while (rs.next()) {
+				System.out.println(rs.getString(1));
+			}
+			conn.close();
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+};
+
+public class JavaApplication9 {
+	public static void main(String[] args) {
+		DB db = new DB();
+		db.dbConnect("jdbc:sqlserver://localhost:1433;databaseName=Test;selectMethod=cursor", "TestUser", "swssws", 1, "");
+	}
+}

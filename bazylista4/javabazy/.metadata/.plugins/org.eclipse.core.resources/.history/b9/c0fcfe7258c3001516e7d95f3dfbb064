@@ -1,0 +1,77 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class Windowplayer extends JFrame implements ActionListener{
+	JButton buttonb = new JButton("BET");
+	JButton buttonr = new JButton("RAISE");
+	JButton buttonc = new JButton("CALL");
+	JButton buttonf = new JButton("FOLD");
+	JTextField coin = new JTextField("");
+	
+	public Windowplayer(String card){
+		setSize(400,300);
+		setLocationRelativeTo(null);
+	    setLayout(null);
+	    setResizable(false);
+	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    
+	    JLabel card1 = new JLabel(card);
+	    
+	    card1.setBounds(20, 20, 100, 50);
+	    buttonb.setBounds(280, 20,100,50);
+	    buttonb.addActionListener(this);
+	    buttonr.setBounds(280,70 ,100,50);
+	    buttonr.addActionListener(this);
+	    buttonc.setBounds(280,120 ,100,50);
+	    buttonc.addActionListener(this);
+	    buttonf.setBounds(280,170 ,100,50);
+	    buttonf.addActionListener(this);
+	    coin.setBounds(20, 150, 100, 50);
+	    
+	    add(card1);
+	    add(buttonb);
+	    add(buttonr);
+	    add(buttonc);
+	    add(buttonf);
+	    add(coin);
+	    
+	    setVisible(true);
+	}
+	
+
+	public void actionPerformed(ActionEvent e) {
+		Object source = e.getSource();
+		if(source==buttonb){
+			String cb=coin.getText();
+			setVisible(false);
+			
+			
+		}
+		if(source==buttonr){
+			String cr=coin.getText();
+			//return
+			setVisible(false);
+			
+		}
+		if(source==buttonc){
+			setVisible(false);
+			
+		}
+		if(source==buttonf){
+			setVisible(false);
+			
+		}
+		
+	}
+	
+	public static void main(String args[]){
+		String card ="2SAC";
+		new Windowplayer(card);
+	}
+
+	
+
+}
+

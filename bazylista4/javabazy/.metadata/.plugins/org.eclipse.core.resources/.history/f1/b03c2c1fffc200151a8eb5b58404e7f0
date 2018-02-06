@@ -1,0 +1,58 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+
+public class Window extends JFrame implements ActionListener{
+	JTextField gen = new JTextField("");
+	JButton buttonf = new JButton("Firmy");
+	JButton buttonp = new JButton("Pracownicy");
+	JButton buttond = new JButton("Dyrektorzy");
+	JButton buttonw = new JButton("W³aœciciele");
+	JButton buttonww = new JButton("Wydzia³y");
+	
+	public Window(){
+		setSize(700,650);
+		setLocationRelativeTo(null);
+	    setLayout(null);
+	    setResizable(false);
+	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    
+	    gen.setBounds(5, 20, 95, 50);
+	    buttonf.setBounds(100, 20,120,50);
+	    buttonf.addActionListener(this);
+	    buttonp.setBounds(220, 20,120,50);
+	    buttonp.addActionListener(this);
+	    buttond.setBounds(340,20,120,50);
+	    buttond.addActionListener(this);
+	    buttonw.setBounds(460, 20,120,50);
+	    buttonw.addActionListener(this);
+	    buttonww.setBounds(580, 20,120,50);
+	    buttonww.addActionListener(this);
+	    
+	    add(gen);
+	    add(buttonf);
+	    add(buttonp);
+	    add(buttond);
+	    add(buttonw);
+	    add(buttonww);
+	    
+	    
+	    setVisible(true);
+	}
+	
+
+	public void actionPerformed(ActionEvent e) {
+		Object source = e.getSource();
+		
+		
+		
+	}
+	
+	public static void main(String args[]){
+		new Window();
+	}
+
+	
+
+}
+

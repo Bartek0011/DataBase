@@ -1,0 +1,6 @@
+public class JavaApplication9 {
+public static void main(String[] args) {
+DB db = new DB();
+db.dbConnect("jdbc:sqlserver://localhost:1433;databaseName=Test;selectMethod=cursor","TestUser", "TestUser");
+}
+}
